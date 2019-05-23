@@ -139,7 +139,7 @@ if($json['sign']==$sign1){
 									</div>
                                     <div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="code-updates" ><span class="icon">check</span>&nbsp;充值</NOtton>
+											<button class="btn btn-flat waves-attach" id="code-updates" ><span class="icon">check</span>&nbsp;充值</button>
 										</div>
 									</div>
                         <script>
