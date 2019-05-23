@@ -27,7 +27,7 @@ class flyfoxpay extends AbstractPayment
         $ffmchid = $settings['hid'];
 		$fftype = 'all';
 		$fftrade = $pl->tradeno;
-	    $ffcny = $price/0.056;
+	    $ffcny = $price*5.6;
         $data = [
             'mail' => $settings['mail'],
 			'hid' => $settings['hid'],
