@@ -98,8 +98,11 @@ $json=json_decode($output, true);
 if($json['sign']==$sign1){
   if($json['status_trade']=="payok"){
            $this->postPayment($json['customize1'], "在线支付");
-        echo 'success';
-       header("Location: /user/code");
+         if($_POST['orderid']!=='' OR $_POST['orderid']!==null){
+               header('Content-Type: application/json');
+               echo '{"ok":"ok"}';}else{
+               echo 'success';
+               header("Location: /user/code");}
 
         }elseif($json['status_trade']=="payokbaterror"){
            echo '验证失败，payokbaterror';
@@ -136,7 +139,7 @@ if($json['sign']==$sign1){
 									</div>
                                     <div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="code-update" ><span class="icon">check</span>&nbsp;充值</NOtton>
+											<button class="btn btn-flat waves-attach" id="code-updates" ><span class="icon">check</span>&nbsp;充值</NOtton>
 										</div>
 									</div>
                         <script>
@@ -146,7 +149,7 @@ if($json['sign']==$sign1){
 	$(".type").click(function(){
 		type = $(this).data("pay");
 	});
-	$("#code-update").click(function(){
+	$("#code-updates").click(function(){
 		var price = parseFloat($("#amount").val());
 		console.log("将要使用"+type+"方法充值"+price+"元")
 		if(isNaN(price)){
