@@ -85,6 +85,8 @@ $security1['mail']      = $settings['mail'];//商家EMAIL
 
 $security1['trade_no']      = $security['orderid'];//商家訂單ID
 
+$o='';	      
+	      
 foreach ($security1 as $k=>$v)
 
 {
