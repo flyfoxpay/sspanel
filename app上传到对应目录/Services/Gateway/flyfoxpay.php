@@ -122,13 +122,9 @@ if($json['sign']==$sign1){
 											<ul class="nav nav-list">
 											
 													<li>
-														<a class="waves-attach waves-effect type active" data-toggle="tab" data-pay="wxpay">微信支付</a>
+														<a class="waves-attach waves-effect type active" data-toggle="tab" data-pay="wxpay">翔狐支付</a>
 													</li>
 											
-								
-													<li>
-														<a class="waves-attach waves-effect type" data-toggle="tab" data-pay="alipay">支付宝</a>
-													</li>
 											
 				
 											</ul>
@@ -146,7 +142,6 @@ if($json['sign']==$sign1){
 									</div>
                         <script>
 		var type = "wxpay";
-			var type = "alipay";
 	var pid = 0;
 	$(".type").click(function(){
 		type = $(this).data("pay");
@@ -176,10 +171,7 @@ if($json['sign']==$sign1){
 					pid = data.pid;
 					if(type=="wxpay"){
 						$("#result").modal();
-						$("#msg").html("正在跳转到微信..."+data.code);
-					}else if(type=="alipay"){
-						$("#result").modal();
-						$("#msg").html("正在跳转到支付宝..."+data.code);
+						$("#msg").html("正在跳转到翔狐支付系統..."+data.code);
 					}
 				}
 			}
