@@ -36,7 +36,7 @@ class flyfoxpay extends AbstractPayment
 			'cny' => $price,
         ];
         $return='https://'.$_SERVER['HTTP_HOST'].'/flyfoxpay_back/'.$type;
-        $url="https://sc-i.pw/api/?mail=".$ffaccount."&id=".$ffmchid."&keys=".$ffkey."&type=".$typesss."&trade_no=".time()."&amount=".$ffcny."&trade_name=".time()."&return=".$return."&go=1&customize1=".$pl->tradeno;
+        $url="https://api.flyfoxpay.com/api/?mail=".$ffaccount."&id=".$ffmchid."&keys=".$ffkey."&type=".$typesss."&trade_no=".time()."&amount=".$ffcny."&trade_name=".time()."&return=".$return."&go=1&customize1=".$pl->tradeno;
 		$result = "<script language='javascript' type='text/javascript'>window.location.href='".$url."';</script>";
         $result = json_encode(array('code'=>$result,'errcode'=>0,'pid' =>$pl->id));
         return $result;
@@ -50,7 +50,7 @@ class flyfoxpay extends AbstractPayment
       if($security['orderid']=='' OR $security['orderid']==null){header("Location: /user/code");}else{
 //手续费
 $fee = 0;
-$url = "https://sc-i.pw/api/check/";//API位置
+$url = "https://api.flyfoxpay.com/api/check/";//API位置
  
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
